@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+    <html>
+        
+        <head>
+            
+            <title>Ocean Eddies</title>
+            <h1>World Ocean Eddies</h1>
+            <p>Ci Zhang and Ryan Abernathey</p>
+            <p>Department of Earth and Environmental Sciences</p>
+            <p>Columbia University</p>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
+            <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+            <script src="jquery-2.2.3.min.js"></script>
+            <style>#ocean { height: 480px; }</style>
+            
+        </head>
+        
+        <body>
+            
+            <div id="ocean"></div>
+            <script>
+                
+                var oceanEddies = L.map('ocean').setView([42.3601, -71.0589], 12);
+                L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(oceanEddies);
+                $.getJSON("boston.json", function(data){ L.geoJson(data).addTo(oceanEddies); });
+                
+            </script>
+            
+        </body>
+        
+    </html>
