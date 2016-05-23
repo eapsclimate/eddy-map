@@ -48,7 +48,7 @@ def typeNear(type):
 
 @app.route("/test")
 def test():
-    return "<strong>The Application Is Working Now!</strong>"
+    return "The application is working now!"
 
 if __name__ == "__main__":
     app.run()
